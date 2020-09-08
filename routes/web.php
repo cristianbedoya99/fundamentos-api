@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::Apiresource('api/posts','Api\PostController');
+
+Route::group(['prefix'=>'api'], function(){
+
+    Route::Apiresource('posts','Api\PostController');
+
+});
